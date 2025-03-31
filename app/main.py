@@ -19,7 +19,7 @@ class Animal:
             Animal.alive.remove(self)
 
     @classmethod
-    def __str__(cls) -> None:
+    def __str__(cls) -> str:
         """String representation for Animal.alive"""
         return str(cls.alive)
 
@@ -31,7 +31,7 @@ class Herbivore(Animal):
 
 
 class Carnivore(Animal):
-    def bite(self, prey: str) -> None:
+    def bite(self, prey: Herbivore) -> None:
         """Bite a herbivore and decrease its health"""
         if isinstance(prey, Herbivore) and not prey.hidden:
             prey.health -= 50
